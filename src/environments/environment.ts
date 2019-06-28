@@ -14,5 +14,5 @@ export const environment = {
   showAds: false,
   tokensUrl: 'https://raw.githubusercontent.com/eoscafe/eos-airdrops/master/tokens.json',
   tickerUrl: 'https://api.coinmarketcap.com/v2/ticker/1765/',
-  token: 'EOS'
+  token: 'LLM'
 };
