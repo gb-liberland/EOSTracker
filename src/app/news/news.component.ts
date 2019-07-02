@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatCardModule} from '@angular/material/card'; 
-import data from './news/news.json';
+import data from './news.json';
 
 @Component({
   selector: 'app-news',
