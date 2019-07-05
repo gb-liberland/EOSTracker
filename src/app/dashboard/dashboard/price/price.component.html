@@ -1,4 +1,5 @@
-<mat-card *ngIf="price">
+<mat-card>
+<!-- <mat-card *ngIf="price"> -->
   <mat-card-title fxLayout="row" fxLayoutAlign="start center">
     <mat-icon>attach_money</mat-icon>
     Price Info
@@ -6,52 +7,49 @@
   <mat-card-content>
     <div class="table-container">
       <table>
-        <ng-container *ngIf="price.quotes?.USD as usd">
+        <ng-container>
+        <!-- <ng-container *ngIf="price.quotes?.USD as usd"> -->
           <tr>
             <td>Price</td>
             <td>{{1 | currency:'USD'}} USD</td>
-            <!-- <td>{{usd.price | currency:'USD'}} USD</td> -->
           </tr>
-          <!-- <tr>
-            <td>Volume 24h</td>
-            <td>{{usd.volume_24h / 1000000 | currency:'USD':'symbol':'1.0-0'}}M USD</td>
-          </tr> -->
           <tr>
             <td>Market Cap</td>
             <td>{{700 | currency:'USD':'symbol'}}M USD</td>
-            <!-- <td>{{usd.market_cap/ 1000000000 | currency:'USD':'symbol'}}B USD</td> -->
           </tr>
           <tr>
             <td>% Change 1h</td>
             <td>
+              {{-0.04 / 100 | percent:'1.2'}}
+              <app-price-trending [percentage]="-0.04"></app-price-trending>
+            </td>
+            <!-- <td>
               {{usd.percent_change_1h / 100 | percent:'1.2'}}
               <app-price-trending [percentage]="usd.percent_change_1h"></app-price-trending>
-            </td>
+            </td> -->
           </tr>
           <tr>
             <td>% Change 24h</td>
             <td>
-              {{usd.percent_change_24h / 100 | percent:'1.2'}}
-              <app-price-trending [percentage]="usd.percent_change_24h"></app-price-trending>
+              {{2.44 / 100 | percent:'1.2'}}
+              <app-price-trending [percentage]="2.44"></app-price-trending>
             </td>
           </tr>
           <tr>
             <td>% Change 7d</td>
             <td>
-              {{usd.percent_change_7d / 100 | percent:'1.2'}}
-              <app-price-trending [percentage]="usd.percent_change_7d"></app-price-trending>
+              {{6.65 / 100 | percent:'1.2'}}
+              <app-price-trending [percentage]="6.65"></app-price-trending>
             </td>
           </tr>
         </ng-container>
         <tr>
           <td>Circulating Supply</td>
           <td>{{200000000 | number}} {{token}}</td>
-          <!-- <td>{{price.circulating_supply | number}} {{token}}</td> -->
         </tr>
         <tr>
           <td>Total Supply</td>
           <td>{{700000000 | number}} {{token}}</td>
-          <!-- <td>{{price.total_supply | number}} {{token}}</td> -->
         </tr>
       </table>
     </div>
